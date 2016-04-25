@@ -37,6 +37,7 @@ public class MapDrawer : MonoBehaviour {
         foreach(MapBlock drawBlock in drawRow.rowBlocks)
         {
             GameObject.Instantiate(drawBlock, this.transform.position, this.transform.rotation);
+            drawBlock.spawned = true;
             NextBlockLocation();
         }
     }
