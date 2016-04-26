@@ -16,13 +16,18 @@ public class PlayerLimb : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void UpdateLimb()
+    {
+
+    }
 }
 
-public enum LimbMode
+public enum LimbStatus
 {
     Locked,
-    Mimic,
-    Moving,
+    MovingUp,
+    PassiveDrop,
 }
 
 public enum LimbPosition

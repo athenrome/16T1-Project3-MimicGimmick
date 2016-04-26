@@ -19,4 +19,38 @@ public class Player : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void UpdateTargetLimb(LimbPosition targetLimb, LimbStatus action)
+    {
+        float moveDistance = 0;
+        bool limbLock = false;
+
+        switch(action)
+        {
+            case LimbStatus.Locked:
+                break;
+
+            case LimbStatus.PassiveDrop:
+                break;
+
+            case LimbStatus.MovingUp:
+                break;
+        }
+
+        switch(targetLimb)
+        {
+            case LimbPosition.LowerLeft:
+                
+                break;
+
+            case LimbPosition.LowerRight:
+                break;
+
+            case LimbPosition.UpperLeft:
+                break;
+
+            case LimbPosition.UpperRight:
+                break;
+        }
+    }    
 }

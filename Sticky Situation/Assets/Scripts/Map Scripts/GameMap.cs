@@ -7,7 +7,7 @@ public class GameMap : MonoBehaviour {
 
     public List<MapRow> mapRows = new List<MapRow>();
 
-    int rowCount;
+    int desiredRows;
 
     // Use this for initialization
     void Start () {
@@ -21,9 +21,9 @@ public class GameMap : MonoBehaviour {
 
     public GameMap(List<MapBlock> availableTiles)
     {
-        rowCount = 5;
+        
 
-        for(int currRow = 0; currRow < rowCount; currRow++)
+        for(int currRow = 0; currRow < desiredRows; currRow++)
         {
 
             int tilesToChoose = Random.Range(0, (availableTiles.Count));
