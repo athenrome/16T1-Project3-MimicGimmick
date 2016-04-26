@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class MapDrawer : MonoBehaviour {
 
+    public List<MapBlock> mapBlocks;
+
     GameMap map;
 
     public float drawX;
@@ -11,7 +13,7 @@ public class MapDrawer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        DrawMap();
+        
 	
 	}
 	
@@ -22,11 +24,16 @@ public class MapDrawer : MonoBehaviour {
 
     public void DrawMap()
     {
+        Debug.Log("Started map drawing");
+        map = new GameMap(mapBlocks);
+
         for (int i = 0; i < map.mapRows.Count; i++)
         {
             DrawRow(map.mapRows[i]);
             NextRowLocation();
+            Debug.Log("Drew Row");
         }
+        Debug.Log("Drew Map");
     }
 
     void DrawRow(MapRow drawRow)

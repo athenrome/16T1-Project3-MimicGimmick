@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class GameMap : MonoBehaviour {
 
-    List<MapBlock> tilesToPlace;
 
-    public List<MapRow> mapRows;
+
+    public List<MapRow> mapRows = new List<MapRow>();
 
     int rowCount;
 
@@ -19,14 +19,14 @@ public class GameMap : MonoBehaviour {
 	
 	}
 
-    public GameMap(int _desiredRows, List<MapBlock> availableTiles)
+    public GameMap(List<MapBlock> availableTiles)
     {
-        rowCount = _desiredRows;
+        rowCount = 5;
 
-        for(int currRow = 0; mapRows.Count < rowCount; currRow++)
+        for(int currRow = 0; currRow < rowCount; currRow++)
         {
 
-            int tilesToChoose = Random.Range(1, (tilesToPlace.Count / 2));
+            int tilesToChoose = Random.Range(0, (availableTiles.Count));
 
 
             List<MapBlock> newRowBlocks = new List<MapBlock>();
@@ -34,19 +34,23 @@ public class GameMap : MonoBehaviour {
 
             for (int i = 0; i < tilesToChoose; i++)
             {
-                int targetLocation = Random.Range(0, tilesToPlace.Count);
+                int targetLocation = Random.Range(0, availableTiles.Count);
 
-                MapBlock chosenBlock = tilesToPlace[targetLocation];
+                MapBlock chosenBlock = availableTiles[targetLocation];
 
                 newRowBlocks.Add(chosenBlock);
 
-                tilesToPlace.Remove(chosenBlock);
+                availableTiles.Remove(chosenBlock);
             }
 
             mapRows.Add(new MapRow(currRow, newRowBlocks));
 
+
         }
+        Debug.Log("Created Game Map");
     }
+
+    
 }
 
 public class MapRow
@@ -59,6 +63,7 @@ public class MapRow
     {
         rowPos = _mapPos;
         rowBlocks = _rowTiles;
+        Debug.Log("Created MapRow");
     }
 
 }

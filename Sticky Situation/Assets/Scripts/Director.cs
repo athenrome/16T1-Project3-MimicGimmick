@@ -3,8 +3,11 @@ using System.Collections;
 
 public class Director : MonoBehaviour {
 
+    public MapDrawer mapDrawer;
+
 	// Use this for initialization
 	void Start () {
+        mapDrawer.DrawMap();
 	
 	}
 	
