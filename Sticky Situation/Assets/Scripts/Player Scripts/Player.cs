@@ -72,7 +72,39 @@ public class Player : MonoBehaviour {
                 RotatePlayerRight();
             }
         }
-            
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            if (MimicMode == true)
+            {
+                UpdateTargetLimb(LimbPosition.UpperLeft, LimbAction.MovingUp);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            if (MimicMode == true)
+            {
+                UpdateTargetLimb(LimbPosition.UpperRight, LimbAction.MovingUp);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.O))
+        {
+            if (MimicMode == true)
+            {
+                UpdateTargetLimb(LimbPosition.LowerLeft, LimbAction.MovingUp);
+            }
+        }
+
+        if (Input.GetKey(KeyCode.P))
+        {
+            if (MimicMode == true)
+            {
+                UpdateTargetLimb(LimbPosition.LowerRight, LimbAction.MovingUp);
+            }
+        }
+
     }
 
 	void MovePlayerForward ()
