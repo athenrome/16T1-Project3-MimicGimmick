@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
 
 	public float LimbMoveSpeed;
 
+    public GameObject MoveModel;
+    public GameObject MimicModel;
 
 
 
@@ -105,6 +107,20 @@ public class Player : MonoBehaviour {
             }
         }
 
+    }
+
+    void ModeSwitch()
+    {
+        if(MimicMode == true)
+        {
+            MimicModel.SetActive(true);
+            MoveModel.SetActive(false);
+        }
+        else
+        {
+            MimicModel.SetActive(false);
+            MoveModel.SetActive(true);
+        }
     }
 
 	void MovePlayerForward ()
