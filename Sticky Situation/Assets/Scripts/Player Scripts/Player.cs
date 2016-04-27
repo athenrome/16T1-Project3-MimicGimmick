@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
     public PlayerLimb LowerLeft;
     public PlayerLimb LowerRight;
 
-    MimicObject currMimic;
+    public MimicObject currMimic;
 
     // Use this for initialization
     void Start () {

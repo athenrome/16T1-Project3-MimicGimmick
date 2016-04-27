@@ -75,21 +75,18 @@ public class PlayerLimb : MonoBehaviour {
 
     void MoveLimbUp()
     {
-        Quaternion newLimbRotation = new Quaternion(transform.position.x, transform.position.y, (limbMoveSpeed * Time.deltaTime), 0);
-        
+        float zRotation = transform.rotation.z;
 
-        this.transform.rotation = Quaternion.Slerp(currLimbQuaternion, newLimbRotation, limbMoveSpeed * Time.deltaTime);
+        transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation += limbMoveSpeed * Time.deltaTime));
 
-        currLimbRotation = currLimbQuaternion.z;
     }
 
     void PassiveDrop()
     {
-        Quaternion newLimbRotation = new Quaternion(transform.position.x, transform.position.y, (passiveDropSpeed * Time.deltaTime), 0);
+        float zRotation = transform.rotation.z;
 
-        this.transform.rotation = Quaternion.Slerp(currLimbQuaternion, newLimbRotation, limbMoveSpeed * Time.deltaTime);
+        transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation -= limbMoveSpeed * Time.deltaTime));
 
-        currLimbRotation = currLimbQuaternion.z;
     }
 }
 
