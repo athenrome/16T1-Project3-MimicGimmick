@@ -3,8 +3,22 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-    
 
+
+	public float LifePoints;
+	public Vector3 PlayerPosition;
+	public float MoveSpeed;
+	public float RotateSpeed;
+	public bool PlayerAlive;
+	public bool MimicMode;
+	public float HiddenLevel;
+	public bool PlayerSpotted;
+	public float LimbMoveSpeed;
+
+
+
+
+	//A list of all the limbs:
     public PlayerLimb UpperLeft;
     public PlayerLimb UpperRight;
     public PlayerLimb LowerLeft;
