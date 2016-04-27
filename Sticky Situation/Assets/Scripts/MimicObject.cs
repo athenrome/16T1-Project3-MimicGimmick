@@ -23,8 +23,8 @@ public class MimicObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
     void FacePlayer()
     {
@@ -33,9 +33,11 @@ public class MimicObject : MonoBehaviour {
 
     void SetLimbPositions()
     {
-        UpperLeft.transform.rotation = new Quaternion(UpperLeft.transform.rotation.x, UpperLeft.transform.rotation.y, UpperLeftPosition, 0);
-        UpperRight.transform.rotation = new Quaternion(UpperRight.transform.rotation.x, UpperRight.transform.rotation.y, UpperRightPosition, 0);
-        LowerLeft.transform.rotation = new Quaternion(LowerLeft.transform.rotation.x, LowerLeft.transform.rotation.y, LowerLeftPosition, 0);
-        LowerRight.transform.rotation = new Quaternion(LowerRight.transform.rotation.x, LowerRight.transform.rotation.y, LowerRightPosition, 0);
+        UpperLeft.transform.Rotate(0, 0, UpperLeftPosition);
+        UpperRight.transform.Rotate(0, 0, UpperRightPosition);
+        LowerLeft.transform.Rotate(0, 0, LowerLeftPosition);
+        LowerRight.transform.Rotate(0, 0, LowerRightPosition);
+
+        Debug.Log("Set Mimic limb positions");
     }
 }
