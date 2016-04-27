@@ -78,7 +78,7 @@ public class PlayerLimb : MonoBehaviour {
         float zRotation = transform.rotation.z;
 
         transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation += limbMoveSpeed * Time.deltaTime));
-
+        Debug.Log("Moving Leg");
     }
 
     void PassiveDrop()
@@ -86,7 +86,7 @@ public class PlayerLimb : MonoBehaviour {
         float zRotation = transform.rotation.z;
 
         transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation -= limbMoveSpeed * Time.deltaTime));
-
+        Debug.Log("Dropping Leg");
     }
 }
 
