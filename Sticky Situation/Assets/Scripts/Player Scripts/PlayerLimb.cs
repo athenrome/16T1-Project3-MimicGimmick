@@ -14,11 +14,17 @@ public class PlayerLimb : MonoBehaviour {
     public float timeTilDrop;
     float currDropTime;
 
-    Quaternion currLimbRotation;
+    Quaternion currLimbQuaternion;
+    float currLimbRotation;
     public float minRotation;
     public float maxRotation;
 
     public bool limbLocked;
+    public bool inPosition;
+
+    public float errorAllownance;
+
+    float targetPos;
 
 	// Use this for initialization
 	void Start () {
@@ -30,8 +36,10 @@ public class PlayerLimb : MonoBehaviour {
 	
 	}
 
-    public void UpdateLimb(LimbAction _action)
+    public void UpdateLimb(LimbAction _action, float _targetPos)
     {
+        targetPos = _targetPos;
+
         switch(_action)
         {
             case LimbAction.Lock:
@@ -51,7 +59,17 @@ public class PlayerLimb : MonoBehaviour {
                     currDropTime = timeTilDrop;
                 }
                 break;
+        }
+    }
 
+    void CheckLimbPosition()
+    {
+        if(currLimbRotation <= (currLimbRotation += errorAllownance))
+        {
+            if (currLimbRotation >= (targetPos -= errorAllownance));
+            {
+                currLockTime -= Time.deltaTime;
+            }
         }
     }
 
@@ -60,14 +78,18 @@ public class PlayerLimb : MonoBehaviour {
         Quaternion newLimbRotation = new Quaternion(transform.position.x, transform.position.y, (limbMoveSpeed * Time.deltaTime), 0);
         
 
-        this.transform.rotation = Quaternion.Slerp(currLimbRotation, newLimbRotation, limbMoveSpeed * Time.deltaTime);
+        this.transform.rotation = Quaternion.Slerp(currLimbQuaternion, newLimbRotation, limbMoveSpeed * Time.deltaTime);
+
+        currLimbRotation = currLimbQuaternion.z;
     }
 
     void PassiveDrop()
     {
         Quaternion newLimbRotation = new Quaternion(transform.position.x, transform.position.y, (passiveDropSpeed * Time.deltaTime), 0);
 
-        this.transform.rotation = Quaternion.Slerp(currLimbRotation, newLimbRotation, limbMoveSpeed * Time.deltaTime);
+        this.transform.rotation = Quaternion.Slerp(currLimbQuaternion, newLimbRotation, limbMoveSpeed * Time.deltaTime);
+
+        currLimbRotation = currLimbQuaternion.z;
     }
 }
 

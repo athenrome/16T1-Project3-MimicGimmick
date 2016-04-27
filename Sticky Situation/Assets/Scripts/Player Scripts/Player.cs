@@ -91,6 +91,7 @@ public class Player : MonoBehaviour {
     void RotatePlayerRight()
     {
         transform.Rotate(Vector3.up * RotateSpeed);
+
     }
 
 
