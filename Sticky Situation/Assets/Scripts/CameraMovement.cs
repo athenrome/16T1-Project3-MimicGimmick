@@ -5,6 +5,9 @@ public class CameraMovement : MonoBehaviour {
 
 
 
+	//the following variables where downloaded from the internet as a part of a camera rotation
+	//script that used mouse input. This camera style is commonly used in fps games. 
+	//the code was found at: http://coffeebreakcodes.com/move-zoom-and-rotate-camera-unity3d/
 
 	public float minX = -360.0f;
 	public float maxX = 360.0f;
@@ -18,6 +21,9 @@ public class CameraMovement : MonoBehaviour {
 	float rotationY = 0.0f;
 	float rotationX = 0.0f;
 
+	//[] means attributes and tooltip allows you to include information to read about a
+	//thing when you hover your mouse cursor over it
+	[Tooltip(" This requires the player gameobject, it is the Game camera and will rotate around the player that it will also follow, but will not be affected by the rotation of.")]
 	public Transform PlayerPos;
 	// Use this for initialization
 	void Start () {
