@@ -32,27 +32,67 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 
-		if (!MimicMode) {
-			MovePlayer ();
-		}
+        CheckInput();
 
 	}
 
-	private void MovePlayer ()
+    void CheckInput()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            if(MimicMode == false)
+            {
+                MovePlayerForward();
+            }
+        }
+            
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (MimicMode == false)
+            {
+                MovePlayerBack();
+            }
+        }
+            
+        if (Input.GetKey(KeyCode.A))
+        {
+            if (MimicMode == false)
+            {
+                RotatePlayerLeft();
+            }
+        }
+            
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (MimicMode == false)
+            {
+                RotatePlayerRight();
+            }
+        }
+            
+    }
+
+	void MovePlayerForward ()
 	{
-		//movement
-		if (Input.GetKey (KeyCode.W))
-			transform.Translate (Vector3.forward * -MoveSpeed);
-		if (Input.GetKey (KeyCode.S))
-			transform.Translate (Vector3.forward * MoveSpeed);
-		if (Input.GetKey (KeyCode.A))
-			transform.Rotate (Vector3.up* -RotateSpeed);
-		if (Input.GetKey (KeyCode.D))
-			transform.Rotate (Vector3.up* RotateSpeed);
-		
-	}
+        transform.Translate(Vector3.forward * -MoveSpeed);
+    }
+
+    void MovePlayerBack()
+    {
+        transform.Translate(Vector3.forward * MoveSpeed);
+    }
+
+    void RotatePlayerLeft()
+    {
+        transform.Rotate(Vector3.up * -RotateSpeed);
+    }
+
+    void RotatePlayerRight()
+    {
+        transform.Rotate(Vector3.up * RotateSpeed);
+    }
+
 
     public void UpdateTargetLimb(LimbPosition targetLimb, LimbAction action)
     {
