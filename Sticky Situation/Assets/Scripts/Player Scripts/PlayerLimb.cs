@@ -5,7 +5,7 @@ public class PlayerLimb : MonoBehaviour {
 
     public LimbPosition bodyPos;
 
-    public float limbMoveSpeed;
+    public float limbMoveSpeed = 4;
     public float passiveDropSpeed;
 
     public float timeTilLock;
@@ -78,7 +78,7 @@ public class PlayerLimb : MonoBehaviour {
         float zRotation = transform.rotation.z;
 
         transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation += limbMoveSpeed * Time.deltaTime));
-        Debug.Log("Moving Leg");
+        Debug.Log("Moving Leg " + transform.rotation.z);
     }
 
     void PassiveDrop()

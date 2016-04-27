@@ -31,6 +31,9 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        ModeSwitch(true);
+        Debug.Log("Mode Switched");
 	
 	}
 	
@@ -109,15 +112,17 @@ public class Player : MonoBehaviour {
 
     }
 
-    void ModeSwitch()
+    void ModeSwitch(bool enableMimic)
     {
-        if(MimicMode == true)
+        if(enableMimic == true)
         {
+            MimicMode = true;
             MimicModel.SetActive(true);
             MoveModel.SetActive(false);
         }
         else
         {
+            MimicMode = false;
             MimicModel.SetActive(false);
             MoveModel.SetActive(true);
         }
@@ -154,15 +159,15 @@ public class Player : MonoBehaviour {
                 break;
 
             case LimbPosition.LowerRight:
-                LowerRight.UpdateLimb(action, currMimic.LowerLeftPosition);
+                LowerRight.UpdateLimb(action, currMimic.LowerRightPosition);
                 break;
 
             case LimbPosition.UpperLeft:
-                UpperLeft.UpdateLimb(action, currMimic.LowerLeftPosition);
+                UpperLeft.UpdateLimb(action, currMimic.UpperLeftPosition);
                 break;
 
             case LimbPosition.UpperRight:
-                UpperRight.UpdateLimb(action, currMimic.LowerLeftPosition);
+                UpperRight.UpdateLimb(action, currMimic.UpperRightPosition);
                 break;
         }
     }    
