@@ -13,6 +13,7 @@ public class Player : MonoBehaviour {
 	public bool MimicMode;
 	public float HiddenLevel;
 	public bool PlayerSpotted;
+
 	public float LimbMoveSpeed;
 
 
@@ -34,36 +35,24 @@ public class Player : MonoBehaviour {
 	
 	}
 
-    public void UpdateTargetLimb(LimbPosition targetLimb, LimbStatus action)
+    public void UpdateTargetLimb(LimbPosition targetLimb, LimbAction action)
     {
-        float moveDistance = 0;
-        bool limbLock = false;
-
-        switch(action)
-        {
-            case LimbStatus.Locked:
-                break;
-
-            case LimbStatus.PassiveDrop:
-                break;
-
-            case LimbStatus.MovingUp:
-                break;
-        }
-
         switch(targetLimb)
         {
             case LimbPosition.LowerLeft:
-                
+                LowerLeft.UpdateLimb(action);
                 break;
 
             case LimbPosition.LowerRight:
+                LowerRight.UpdateLimb(action);
                 break;
 
             case LimbPosition.UpperLeft:
+                UpperLeft.UpdateLimb(action);
                 break;
 
             case LimbPosition.UpperRight:
+                UpperRight.UpdateLimb(action);
                 break;
         }
     }    
