@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
     public PlayerLimb LowerLeft;
     public PlayerLimb LowerRight;
 
+    MimicObject currMimic;
+
     // Use this for initialization
     void Start () {
 	
@@ -100,19 +102,19 @@ public class Player : MonoBehaviour {
         switch(targetLimb)
         {
             case LimbPosition.LowerLeft:
-                LowerLeft.UpdateLimb(action);
+                LowerLeft.UpdateLimb(action, currMimic.LowerLeftPosition);
                 break;
 
             case LimbPosition.LowerRight:
-                LowerRight.UpdateLimb(action);
+                LowerRight.UpdateLimb(action, currMimic.LowerLeftPosition);
                 break;
 
             case LimbPosition.UpperLeft:
-                UpperLeft.UpdateLimb(action);
+                UpperLeft.UpdateLimb(action, currMimic.LowerLeftPosition);
                 break;
 
             case LimbPosition.UpperRight:
-                UpperRight.UpdateLimb(action);
+                UpperRight.UpdateLimb(action, currMimic.LowerLeftPosition);
                 break;
         }
     }    
