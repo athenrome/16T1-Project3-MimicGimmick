@@ -32,6 +32,25 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+
+		if (!MimicMode) {
+			MovePlayer ();
+		}
+
+	}
+
+	private void MovePlayer ()
+	{
+		//movement
+		if (Input.GetKey (KeyCode.W))
+			transform.Translate (Vector3.forward * -MoveSpeed);
+		if (Input.GetKey (KeyCode.S))
+			transform.Translate (Vector3.forward * MoveSpeed);
+		if (Input.GetKey (KeyCode.A))
+			transform.Rotate (Vector3.up* -RotateSpeed);
+		if (Input.GetKey (KeyCode.D))
+			transform.Rotate (Vector3.up* RotateSpeed);
+		
 	}
 
     public void UpdateTargetLimb(LimbPosition targetLimb, LimbStatus action)
