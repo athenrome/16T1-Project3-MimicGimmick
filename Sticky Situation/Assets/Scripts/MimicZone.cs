@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TriggerZone : MonoBehaviour {
+public class MimicZone : MonoBehaviour {
 
-	public int number = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -19,9 +18,7 @@ public class TriggerZone : MonoBehaviour {
 	{
 		if (col.tag == "Player") 
 		{
-			Debug.Log (number);
 			//IDK do some mimicing stuff probably
-
 		}
 
 	}
