@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: c44762afb6590d44e8c0cdf0ad77ff5a
+<<<<<<< HEAD:Sticky Situation/Assets/Art/Stanley Body Pull apart/Stanley_MidLeg_L.obj.meta
+guid: c225932ec3e87594dabc7230fea55b70
 timeCreated: 1461806408
+=======
+guid: 4b931498e6f42a44588cfc34b04a80a2
+timeCreated: 1461805048
+>>>>>>> f9965d80dbead1160c6bc0061a47e409861e08b6:Sticky Situation/Assets/Prefabs/playerbody/Stanley_MidLeg_L.obj.meta
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanley_MidLeg_R
+    100000: Stanley_MidLeg_L
     100002: //RootNode
-    400000: Stanley_MidLeg_R
+    400000: Stanley_MidLeg_L
     400002: //RootNode
-    2300000: Stanley_MidLeg_R
-    3300000: Stanley_MidLeg_R
-    4300000: Stanley_MidLeg_R
+    2300000: Stanley_MidLeg_L
+    3300000: Stanley_MidLeg_L
+    4300000: Stanley_MidLeg_L
   materials:
     importMaterials: 1
     materialName: 0
