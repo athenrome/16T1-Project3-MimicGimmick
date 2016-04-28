@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 31ebbe7fe2853fa4e9083d76e188c549
-timeCreated: 1461766202
+guid: 4b931498e6f42a44588cfc34b04a80a2
+timeCreated: 1461805048
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanley_FrontLeg_R
+    100000: Stanley_MidLeg_L
     100002: //RootNode
-    400000: Stanley_FrontLeg_R
+    400000: Stanley_MidLeg_L
     400002: //RootNode
-    2300000: Stanley_FrontLeg_R
-    3300000: Stanley_FrontLeg_R
-    4300000: Stanley_FrontLeg_R
+    2300000: Stanley_MidLeg_L
+    3300000: Stanley_MidLeg_L
+    4300000: Stanley_MidLeg_L
   materials:
     importMaterials: 1
     materialName: 0

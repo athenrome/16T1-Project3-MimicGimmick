@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: ceb3680a60cbc9f4c9c11ba17cf32a58
-timeCreated: 1461766202
+guid: 7ef0fb83b6dc92647ac69a2f5a1a9ecf
+timeCreated: 1461805048
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanely_Body
+    100000: Stanley_FrontLeg_R
     100002: //RootNode
-    400000: Stanely_Body
+    400000: Stanley_FrontLeg_R
     400002: //RootNode
-    2300000: Stanely_Body
-    3300000: Stanely_Body
-    4300000: Stanely_Body
+    2300000: Stanley_FrontLeg_R
+    3300000: Stanley_FrontLeg_R
+    4300000: Stanley_FrontLeg_R
   materials:
     importMaterials: 1
     materialName: 0
