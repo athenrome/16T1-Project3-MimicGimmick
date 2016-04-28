@@ -28,12 +28,13 @@ public class Player : MonoBehaviour {
     public PlayerLimb LowerRight;
 
     public MimicObject currMimic;
+	public Rigidbody rb;
 
     // Use this for initialization
     void Start () {
 
-        ModeSwitch(true);
-        Debug.Log("Mode Switched");
+		rb = GetComponent<Rigidbody> ();
+       
 	
 	}
 	
@@ -41,6 +42,10 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         CheckInput();
+		if (Input.GetKeyDown (KeyCode.M)) 
+		{
+			ModeSwitch(true);
+		}
 
 	}
 
@@ -130,12 +135,14 @@ public class Player : MonoBehaviour {
 
 	void MovePlayerForward ()
 	{
-        transform.Translate(Vector3.forward * -MoveSpeed);
+        //transform.Translate(Vector3.forward * -MoveSpeed);
+		rb.position += transform.rotation * -Vector3.forward * MoveSpeed * Time.deltaTime;
     }
 
     void MovePlayerBack()
     {
-        transform.Translate(Vector3.forward * MoveSpeed);
+		//transform.Translate(Vector3.forward * MoveSpeed);
+		rb.position += transform.rotation * Vector3.forward * MoveSpeed * Time.deltaTime;
     }
 
     void RotatePlayerLeft()
