@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Sticky Situation/Assets/Art/Stanley Body Pull apart/Stanley_FrontLeg_L.obj.meta
-guid: 6b489e35701c5aa45a63a876c060e4e9
+guid: 4b78f814c4387af4191c7250d34ea21d
 timeCreated: 1461806408
-=======
-guid: 104f0387f53cebd42ab00156aea06aa4
-timeCreated: 1461805048
->>>>>>> f9965d80dbead1160c6bc0061a47e409861e08b6:Sticky Situation/Assets/Prefabs/playerbody/Stanley_FrontLeg_L.obj.meta
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanley_FrontLeg_L
+    100000: Stanely_Body
     100002: //RootNode
-    400000: Stanley_FrontLeg_L
+    400000: Stanely_Body
     400002: //RootNode
-    2300000: Stanley_FrontLeg_L
-    3300000: Stanley_FrontLeg_L
-    4300000: Stanley_FrontLeg_L
+    2300000: Stanely_Body
+    3300000: Stanely_Body
+    4300000: Stanely_Body
   materials:
     importMaterials: 1
     materialName: 0
