@@ -9,8 +9,12 @@ public class Player : MonoBehaviour {
 	public Vector3 PlayerPosition;
 	public float MoveSpeed;
 	public float RotateSpeed;
+
+    public bool inMimicZone;
 	public bool PlayerAlive;
 	public bool MimicMode;
+
+
 	public float HiddenLevel;
 	public bool PlayerSpotted;
 
@@ -32,6 +36,7 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        inMimicZone = false;
 
 		rb = GetComponent<Rigidbody> ();
        
@@ -80,6 +85,32 @@ public class Player : MonoBehaviour {
             }
         }
 
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (MimicMode == false)
+            {
+                RotatePlayerRight();
+            }
+        }
+
+        if (Input.GetKey(KeyCode.E)) // interact key
+        {
+            if (inMimicZone == true)
+            {
+                if(MimicMode = true)
+                {
+                    MimicMode = false;
+                    ModeSwitch(MimicMode);
+                }
+                else
+                {
+                    MimicMode = true;
+                    ModeSwitch(MimicMode);
+                }
+                
+            }
+        }
+
         if (Input.GetKey(KeyCode.Q))
         {
             if (MimicMode == true)
@@ -114,7 +145,7 @@ public class Player : MonoBehaviour {
 
     }
 
-    public void ModeSwitch(bool enableMimic, Transform mimicPlayerPos, Transform mimicCamPos)
+    public void ModeSwitch(bool enableMimic)
     {
         if(enableMimic == true)
         {
