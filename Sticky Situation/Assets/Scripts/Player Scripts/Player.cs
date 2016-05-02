@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     public GameObject cameraObj;
     public Transform moveCameraPos;
     public Transform mimicCameraPos;
+    public Transform mimicPlayerPos;
 
     public float LifePoints;
 	public Vector3 PlayerPosition;
@@ -161,7 +162,11 @@ public class Player : MonoBehaviour {
             MimicModel.SetActive(true);
             MoveModel.SetActive(false);
 
+            transform.position = mimicPlayerPos.transform.position;
+            transform.rotation = mimicPlayerPos.transform.rotation;
+
             cameraObj.transform.position = mimicCameraPos.transform.position;
+            cameraObj.transform.rotation = mimicCameraPos.transform.rotation;
         }
         else
         {
@@ -170,6 +175,7 @@ public class Player : MonoBehaviour {
             MimicModel.SetActive(false);
             MoveModel.SetActive(true);
             cameraObj.transform.position = moveCameraPos.transform.position;
+            cameraObj.transform.rotation = moveCameraPos.transform.rotation;
         }
     }
 

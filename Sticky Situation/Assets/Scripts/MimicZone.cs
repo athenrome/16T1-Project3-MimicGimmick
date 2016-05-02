@@ -31,6 +31,7 @@ public class MimicZone : MonoBehaviour {
             player = col.GetComponent<Player>();
 
             player.currMimic = mimicObject;
+            player.mimicPlayerPos = mimicPlayerPosition;
             player.mimicCameraPos = mimicCameraPosition;
             player.inMimicZone = true;
             print("entered Mimic Zone");
