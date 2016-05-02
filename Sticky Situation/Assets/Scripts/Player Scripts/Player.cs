@@ -42,10 +42,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         CheckInput();
-		if (Input.GetKeyDown (KeyCode.M)) 
-		{
-			ModeSwitch(true);
-		}
+
 
 	}
 
@@ -117,7 +114,7 @@ public class Player : MonoBehaviour {
 
     }
 
-    void ModeSwitch(bool enableMimic)
+    public void ModeSwitch(bool enableMimic, Transform mimicPlayerPos, Transform mimicCamPos)
     {
         if(enableMimic == true)
         {
