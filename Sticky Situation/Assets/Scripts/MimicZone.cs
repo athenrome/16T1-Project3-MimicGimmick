@@ -20,9 +20,14 @@ public class MimicZone : MonoBehaviour {
 
 	public void OnTriggerEnter (Collider col)
 	{
+        Player player;
+
 		if (col.tag == "Player") 
 		{
-			//IDK do some mimicing stuff probably
+            player = col.GetComponent<Player>();
+
+            player.inMimicZone = true;
+            print("asdf");
 		}
 
 	}
