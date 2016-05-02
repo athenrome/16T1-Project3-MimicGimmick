@@ -93,7 +93,7 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.E)) // interact key
+        if (Input.GetKeyDown(KeyCode.E)) // interact key
         {
             if (inMimicZone == true)
             {
@@ -147,6 +147,8 @@ public class Player : MonoBehaviour {
 
     public void ModeSwitch(bool enableMimic)
     {
+        print("Mode Switch");
+
         if(enableMimic == true)
         {
             MimicMode = true;
