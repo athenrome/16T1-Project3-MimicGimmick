@@ -1,19 +1,17 @@
 fileFormatVersion: 2
-guid: 9c6781879ef2e3643b928368b1cf759b
-timeCreated: 1462174316
+guid: 7d850c66a3b6b014796361f5b77b11ce
+timeCreated: 1462187919
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanely_1
+    100000: Rock_Iteration_4
     100002: //RootNode
-    400000: Stanely_1
+    400000: Rock_Iteration_4
     400002: //RootNode
-    2300000: Stanely_1
-    3300000: Stanely_1
-    4300000: Stanely_1
-    9500000: //RootNode
-    11100000: //RootNode
+    2300000: Rock_Iteration_4
+    3300000: Rock_Iteration_4
+    4300000: Rock_Iteration_4
   materials:
     importMaterials: 1
     materialName: 0
@@ -28,7 +26,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -72,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
