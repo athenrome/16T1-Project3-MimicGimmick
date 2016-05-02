@@ -13,9 +13,13 @@ public class MimicObject : MonoBehaviour {
     public GameObject LowerLeft;
     public GameObject LowerRight;
 
+    public float minPos = 5;
+    public float maxPos = 175;
+
 
     // Use this for initialization
     void Start () {
+        ChooseLimbPositions();
         SetLimbPositions();
         FacePlayer();
 	
@@ -29,6 +33,15 @@ public class MimicObject : MonoBehaviour {
     void FacePlayer()
     {
 
+    }
+
+    void ChooseLimbPositions()
+    {
+        UpperLeftPosition = Random.Range(-minPos, -maxPos);
+        UpperRightPosition = Random.Range(minPos, maxPos);
+        LowerLeftPosition = Random.Range(-minPos, -maxPos);
+        LowerRightPosition = Random.Range(minPos, maxPos);
+        Debug.Log(UpperLeftPosition);
     }
 
     void SetLimbPositions()
