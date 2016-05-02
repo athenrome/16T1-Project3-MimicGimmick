@@ -22,13 +22,8 @@ public class MimicZone : MonoBehaviour {
 	{
 		if (col.tag == "Player") 
 		{
-			
+			//IDK do some mimicing stuff probably
 		}
 
 	}
-
-    public void OnCollisionExit(Collision collisionInfo)
-    {
-        print("No longer in contact with " + collisionInfo.transform.name);
-    }
 }
