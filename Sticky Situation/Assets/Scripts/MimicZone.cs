@@ -21,14 +21,34 @@ public class MimicZone : MonoBehaviour {
 	public void OnTriggerEnter (Collider col)
 	{
         Player player;
+        print("Player Trigger Enter");
 
-		if (col.tag == "Player") 
-		{
+        player = col.GetComponent<Player>();
+
+
+        if (col.gameObject.name == "Player")
+        {
             player = col.GetComponent<Player>();
 
             player.inMimicZone = true;
-            print("asdf");
+            print("entered Mimic Zone");
 		}
 
 	}
+
+    public void OnTriggerExit(Collider col)
+    {
+        Player player;
+        print("Player Trigger exit");
+
+
+        if (col.gameObject.name == "Player")
+        {
+            player = col.GetComponent<Player>();
+
+            player.inMimicZone = false;
+            print("exited Mimic Zone");
+        }
+
+    }
 }
