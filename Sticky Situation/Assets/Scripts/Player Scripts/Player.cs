@@ -59,6 +59,10 @@ public class Player : MonoBehaviour {
             {
                 MovePlayerForward();
             }
+            else
+            {
+                Debug.Log("Not avalable in current mode");
+            }
         }
             
         if (Input.GetKey(KeyCode.S))
@@ -97,17 +101,14 @@ public class Player : MonoBehaviour {
         {
             if (inMimicZone == true)
             {
-                if(MimicMode = true)
+                if(MimicMode == false)
                 {
-                    MimicMode = false;
-                    ModeSwitch(MimicMode);
+                    ModeSwitch(true);
                 }
                 else
                 {
-                    MimicMode = true;
-                    ModeSwitch(MimicMode);
+                    ModeSwitch(false);
                 }
-                
             }
         }
 
@@ -141,6 +142,7 @@ public class Player : MonoBehaviour {
             {
                 UpdateTargetLimb(LimbPosition.LowerRight, LimbAction.MovingUp);
             }
+            
         }
 
     }
@@ -151,12 +153,14 @@ public class Player : MonoBehaviour {
 
         if(enableMimic == true)
         {
+            print("In Mimic Mode");
             MimicMode = true;
             MimicModel.SetActive(true);
             MoveModel.SetActive(false);
         }
         else
         {
+            print("In Move Mode");
             MimicMode = false;
             MimicModel.SetActive(false);
             MoveModel.SetActive(true);
