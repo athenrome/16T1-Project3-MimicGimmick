@@ -3,9 +3,11 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    public GameObject cameraObj;
+    public Transform moveCameraPos;
+    public Transform mimicCameraPos;
 
-
-	public float LifePoints;
+    public float LifePoints;
 	public Vector3 PlayerPosition;
 	public float MoveSpeed;
 	public float RotateSpeed;
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start () {
         inMimicZone = false;
+        ModeSwitch(false);
 
 		rb = GetComponent<Rigidbody> ();
        
@@ -157,6 +160,8 @@ public class Player : MonoBehaviour {
             MimicMode = true;
             MimicModel.SetActive(true);
             MoveModel.SetActive(false);
+
+            cameraObj.transform.position = mimicCameraPos.transform.position;
         }
         else
         {
@@ -164,6 +169,7 @@ public class Player : MonoBehaviour {
             MimicMode = false;
             MimicModel.SetActive(false);
             MoveModel.SetActive(true);
+            cameraObj.transform.position = moveCameraPos.transform.position;
         }
     }
 
