@@ -1,17 +1,52 @@
 fileFormatVersion: 2
-guid: c225932ec3e87594dabc7230fea55b70
-timeCreated: 1461806408
+guid: 5224407daa250a14f8323a44ae5a681e
+timeCreated: 1462174553
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanley_MidLeg_L
+    100000: BirdofPrey_1
     100002: //RootNode
-    400000: Stanley_MidLeg_L
+    100004: English Dragon
+    100006: English DragonLArm1
+    100008: English DragonLArm2
+    100010: English DragonLArm3
+    100012: English DragonLLeg1
+    100014: English DragonPelvis
+    100016: English DragonPelvis001
+    100018: English DragonRArm1
+    100020: English DragonRArm2
+    100022: English DragonRArm3
+    100024: English DragonRibcage
+    100026: English DragonRLeg1
+    100028: English DragonSpine
+    100030: English DragonSpine1
+    100032: English DragonSpine2
+    100034: English DragonSpine3
+    100036: English DragonTail1
+    400000: BirdofPrey_1
     400002: //RootNode
-    2300000: Stanley_MidLeg_L
-    3300000: Stanley_MidLeg_L
-    4300000: Stanley_MidLeg_L
+    400004: English Dragon
+    400006: English DragonLArm1
+    400008: English DragonLArm2
+    400010: English DragonLArm3
+    400012: English DragonLLeg1
+    400014: English DragonPelvis
+    400016: English DragonPelvis001
+    400018: English DragonRArm1
+    400020: English DragonRArm2
+    400022: English DragonRArm3
+    400024: English DragonRibcage
+    400026: English DragonRLeg1
+    400028: English DragonSpine
+    400030: English DragonSpine1
+    400032: English DragonSpine2
+    400034: English DragonSpine3
+    400036: English DragonTail1
+    4300000: BirdofPrey_1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: BirdofPrey_1
   materials:
     importMaterials: 1
     materialName: 0
@@ -70,7 +105,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

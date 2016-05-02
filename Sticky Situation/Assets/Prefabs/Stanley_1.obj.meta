@@ -1,17 +1,19 @@
 fileFormatVersion: 2
-guid: 6b489e35701c5aa45a63a876c060e4e9
-timeCreated: 1461806408
+guid: 9c6781879ef2e3643b928368b1cf759b
+timeCreated: 1462174316
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Stanley_FrontLeg_L
+    100000: Stanely_1
     100002: //RootNode
-    400000: Stanley_FrontLeg_L
+    400000: Stanely_1
     400002: //RootNode
-    2300000: Stanley_FrontLeg_L
-    3300000: Stanley_FrontLeg_L
-    4300000: Stanley_FrontLeg_L
+    2300000: Stanely_1
+    3300000: Stanely_1
+    4300000: Stanely_1
+    9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -26,7 +28,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -70,7 +72,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
