@@ -8,10 +8,10 @@ public class PlayerLimb : MonoBehaviour {
     public float limbMoveSpeed = 5;
     public float passiveDropSpeed = 3;
 
-    public float timeTilLock;
+    float timeTilLock;
     float currLockTime;
 
-    public float timeTilDrop;
+    float timeTilDrop = 3;
     float currDropTime;
 
     Quaternion currLimbQuaternion;
@@ -36,6 +36,7 @@ public class PlayerLimb : MonoBehaviour {
 	void Update () {
 
         currDropTime -= Time.deltaTime;
+
         if(currDropTime <= 0)
         {
             UpdateLimb(LimbAction.PassiveDrop,targetPos);
@@ -82,18 +83,34 @@ public class PlayerLimb : MonoBehaviour {
 
     void MoveLimbUp()
     {
-        float zRotation = transform.rotation.z;
+        if(currLimbRotation < maxRotation)
+        {
+            float zRotation = transform.rotation.z;
 
-        transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation += limbMoveSpeed * Time.deltaTime));
-        Debug.Log("Moving Leg " + transform.rotation.z);
+            transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation += limbMoveSpeed * Time.deltaTime));
+            Debug.Log("Moving Leg " + transform.rotation.z);
+            timeTilDrop = 3;
+        }
+        else
+        {
+            Debug.Log("At max pos");
+        }
+        
     }
 
     void PassiveDrop()
     {
-        float zRotation = transform.rotation.z;
+        if (currLimbRotation > minRotation)
+        {
+            float zRotation = transform.rotation.z;
 
-        transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation -= limbMoveSpeed * Time.deltaTime));
-        Debug.Log("Dropping Leg");
+            transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation -= limbMoveSpeed * Time.deltaTime));
+            Debug.Log("Dropping Leg");
+        }
+        else
+        {
+            Debug.Log("At min pos");
+        }
     }
 }
 

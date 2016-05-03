@@ -224,6 +224,7 @@ public class Player : MonoBehaviour {
                 break;
         }
     }
+<<<<<<< HEAD
 
      void OnCollisionEnter(Collision other)
       {
@@ -232,4 +233,6 @@ public class Player : MonoBehaviour {
             Destroy(other.gameObject);
          }
     }
+=======
+>>>>>>> 403b012e13619e506c6f9907971affc6937198aa
 }
