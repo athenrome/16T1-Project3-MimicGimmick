@@ -224,13 +224,4 @@ public class Player : MonoBehaviour {
                 break;
         }
     }
-
-     void OnCollisionEnter(Collision other)
-      {
-         if (other.gameObject.tag == "Pickup")
-         {
-            Debug.Log("Hello");
-            Destroy(other.gameObject);
-         }
-    }
 }
