@@ -23,14 +23,15 @@ public class PlayerLimb : MonoBehaviour {
     public bool limbLocked;
     public bool inPosition;
 
-    public float errorAllownance;
+    float errorAllownance = 2;
 
     float targetPos;
 
 	// Use this for initialization
 	void Start () {
-	
-	}
+        currDropTime = timeTilDrop;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,8 +40,12 @@ public class PlayerLimb : MonoBehaviour {
 
         if(currDropTime <= 0)
         {
-            UpdateLimb(LimbAction.PassiveDrop,targetPos);
+            UpdateLimb(LimbAction.PassiveDrop, targetPos);
         }
+
+        currLimbRotation = this.transform.rotation.eulerAngles.z;
+        print(currLimbRotation);
+        CheckLimbPosition();
 	
 	}
 
@@ -59,13 +64,7 @@ public class PlayerLimb : MonoBehaviour {
                 break;
 
             case LimbAction.PassiveDrop:
-                currDropTime -= Time.deltaTime;
-
-                if(currDropTime <= 0)
-                {
-                    PassiveDrop();
-                    currDropTime = timeTilDrop;
-                }
+                PassiveDrop();                 
                 break;
         }
     }
@@ -85,11 +84,11 @@ public class PlayerLimb : MonoBehaviour {
     {
         if(currLimbRotation < maxRotation)
         {
-            float zRotation = transform.rotation.z;
+            
 
-            transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation += limbMoveSpeed * Time.deltaTime));
+            transform.Rotate(transform.rotation.x, transform.rotation.y, (currLimbRotation += (limbMoveSpeed * Time.deltaTime)));
             Debug.Log("Moving Leg " + transform.rotation.z);
-            timeTilDrop = 3;
+            currDropTime = timeTilDrop;
         }
         else
         {
@@ -102,9 +101,9 @@ public class PlayerLimb : MonoBehaviour {
     {
         if (currLimbRotation > minRotation)
         {
-            float zRotation = transform.rotation.z;
+            
 
-            transform.Rotate(transform.rotation.x, transform.rotation.y, (zRotation -= limbMoveSpeed * Time.deltaTime));
+            transform.Rotate(transform.rotation.x, transform.rotation.y, (currLimbRotation -= (passiveDropSpeed * Time.deltaTime)));
             Debug.Log("Dropping Leg");
         }
         else
