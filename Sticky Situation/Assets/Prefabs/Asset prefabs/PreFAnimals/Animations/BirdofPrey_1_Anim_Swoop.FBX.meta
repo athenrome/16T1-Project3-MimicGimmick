@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: 5131149f2c2466042a9cb0e85aeeb953
+timeCreated: 1462253143
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BirdofPrey_1
+    100002: //RootNode
+    100004: English Dragon
+    100006: English DragonLArm1
+    100008: English DragonLArm2
+    100010: English DragonLArm3
+    100012: English DragonLLeg1
+    100014: English DragonPelvis
+    100016: English DragonPelvis001
+    100018: English DragonRArm1
+    100020: English DragonRArm2
+    100022: English DragonRArm3
+    100024: English DragonRibcage
+    100026: English DragonRLeg1
+    100028: English DragonSpine
+    100030: English DragonSpine1
+    100032: English DragonSpine2
+    100034: English DragonSpine3
+    100036: English DragonTail1
+    400000: BirdofPrey_1
+    400002: //RootNode
+    400004: English Dragon
+    400006: English DragonLArm1
+    400008: English DragonLArm2
+    400010: English DragonLArm3
+    400012: English DragonLLeg1
+    400014: English DragonPelvis
+    400016: English DragonPelvis001
+    400018: English DragonRArm1
+    400020: English DragonRArm2
+    400022: English DragonRArm3
+    400024: English DragonRibcage
+    400026: English DragonRLeg1
+    400028: English DragonSpine
+    400030: English DragonSpine1
+    400032: English DragonSpine2
+    400034: English DragonSpine3
+    400036: English DragonTail1
+    4300000: BirdofPrey_1
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: BirdofPrey_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
