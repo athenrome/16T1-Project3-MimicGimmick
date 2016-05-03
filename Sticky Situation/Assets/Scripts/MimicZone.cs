@@ -21,7 +21,7 @@ public class MimicZone : MonoBehaviour {
 	public void OnTriggerEnter (Collider col)
 	{
         Player player;
-        print("Player Trigger Enter");
+        //print("Player Trigger Enter");
 
         player = col.GetComponent<Player>();
 
