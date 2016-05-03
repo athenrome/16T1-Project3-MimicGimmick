@@ -5,6 +5,7 @@ public class BirdShadowController : MonoBehaviour {
 	public GameObject BirdParent;
 	public Transform theBird;
 	public Transform myPos; 
+	public AudioClip eatingSound;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class BirdShadowController : MonoBehaviour {
 		
 		if (other.gameObject.name == "Player") {
 			Debug.Log ("I found an " + other.gameObject.name);
+			AudioSource.PlayClipAtPoint (eatingSound, this.transform.position);
 		}
 	}
 	void OnTriggerExit (Collider other)
