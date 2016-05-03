@@ -3,10 +3,14 @@ using System.Collections;
 
 public class PickupScript : MonoBehaviour {
 
-    public float lifePointsValue; 
+    public float lifePointsValue = 15; 
 	public bool leafEaten;
 	public GameObject leaf;
 	public AudioClip eatingSound;
+
+    public float leafRespawnDuration = 10;
+    float timeTilRespawn;
+
 	// Use this for initialization
 	void Start () {
 		leafEaten = false;
@@ -14,6 +18,19 @@ public class PickupScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(leafEaten == true)
+        {
+            timeTilRespawn -= Time.deltaTime;
+
+            if(timeTilRespawn <= 0)
+            {
+                leaf.SetActive(true);
+                leafEaten = false;
+                Debug.Log("respwaned leaf");
+            }
+        }
+
+        
 	
 	}
 
@@ -25,8 +42,11 @@ public class PickupScript : MonoBehaviour {
 
             player.LifePoints += lifePointsValue;
 
-			Destroy(leaf);
+            leaf.SetActive(false);
 			leafEaten = true;
+            timeTilRespawn = leafRespawnDuration;
+
+
 			Debug.Log ("we ate a leaf");
 			AudioSource.PlayClipAtPoint (eatingSound, this.transform.position);
 

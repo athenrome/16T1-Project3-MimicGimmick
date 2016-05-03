@@ -3,10 +3,14 @@ using System.Collections;
 
 public class Director : MonoBehaviour {
 
-    public MapDrawer mapDrawer;
+    public float gameTime;
+    float currGameTime;
 
-	// Use this for initialization
-	void Start () {
+    public Player player;
+
+
+    // Use this for initialization
+    void Start () {
 
 	
 	}
@@ -15,4 +19,9 @@ public class Director : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void EndGame()
+    {
+
+    }
 }
