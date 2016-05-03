@@ -223,5 +223,5 @@ public class Player : MonoBehaviour {
                 UpperRight.UpdateLimb(action, currMimic.UpperRightPosition);
                 break;
         }
-    }    
+    }
 }
