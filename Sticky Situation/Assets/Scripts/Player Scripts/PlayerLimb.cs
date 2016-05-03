@@ -11,7 +11,7 @@ public class PlayerLimb : MonoBehaviour {
     float timeTilLock;
     float currLockTime;
 
-    float timeTilDrop = 3;
+    float timeTilDrop = 2;
     float currDropTime;
 
     //Quaternion currLimbQuaternion;
@@ -55,7 +55,7 @@ public class PlayerLimb : MonoBehaviour {
     public void UpdateLimb(LimbAction _action, float _targetPos)
     {
         targetPos = _targetPos;
-        print(targetPos);
+        //print(targetPos);
 
         switch(_action)
         {
