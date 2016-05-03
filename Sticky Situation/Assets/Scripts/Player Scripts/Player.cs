@@ -229,7 +229,6 @@ public class Player : MonoBehaviour {
       {
          if (other.gameObject.tag == "Pickup")
          {
-            Debug.Log("Hello");
             Destroy(other.gameObject);
          }
     }
