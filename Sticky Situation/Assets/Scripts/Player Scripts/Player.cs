@@ -223,5 +223,14 @@ public class Player : MonoBehaviour {
                 UpperRight.UpdateLimb(action, currMimic.UpperRightPosition);
                 break;
         }
-    }    
+    }
+
+     void OnCollisionEnter(Collision other)
+      {
+         if (other.gameObject.tag == "Pickup")
+         {
+            Debug.Log("Hello");
+            Destroy(other.gameObject);
+         }
+    }
 }

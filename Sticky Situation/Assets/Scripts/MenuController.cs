@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour {
 
 	public void OnClick_Play()
 	{
-		SceneManager.LoadScene (Scenes.TestScene);//Test Scene only for internal playtest
+		SceneManager.LoadScene (Scenes.Main);//Test Scene only for internal playtest
 
 	}
 	
