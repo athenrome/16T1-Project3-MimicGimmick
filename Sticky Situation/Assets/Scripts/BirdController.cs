@@ -7,7 +7,7 @@ public class BirdController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		feedingPoints = GameObject.FindGameObjectsWithTag ("Pickup");
 	}
 	
 	// Update is called once per frame
