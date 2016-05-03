@@ -3,8 +3,13 @@ using System.Collections;
 
 public class PickupScript : MonoBehaviour {
 
+<<<<<<< HEAD
 	private float lifePointsValue = 15; 
 	private bool leafEaten = false;
+=======
+    float lifePointsValue = 15; 
+	public bool leafEaten;
+>>>>>>> 06f110ac96415488911e063be2012452bf74c3bd
 	public GameObject leaf;
 	public AudioClip eatingSound;
 
@@ -41,6 +46,10 @@ public class PickupScript : MonoBehaviour {
             Player player = other.gameObject.GetComponent<Player>();
 			Debug.Log (lifePointsValue);
             player.LifePoints += lifePointsValue;
+            if(player.LifePoints > 100)
+            {
+                player.LifePoints = 100;
+            }
 
             leaf.SetActive(false);
 			leafEaten = true;

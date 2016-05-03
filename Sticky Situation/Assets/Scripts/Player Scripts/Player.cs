@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 	public bool MimicMode;
 
 
-	public float mimicLevel;
+	int mimicLevel;
 	bool PlayerSpotted;
 
 	[Tooltip("Currently uses application.LoadLevel to load the end scene")]
@@ -46,6 +46,8 @@ public class Player : MonoBehaviour {
         ModeSwitch(false);
 
 		rb = GetComponent<Rigidbody> ();
+
+        LifePoints = 100;
        
 	
 	}
@@ -53,6 +55,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+<<<<<<< HEAD
 		if (LifePoints > 0) {CheckInput ();}
 		if (LifePoints < 0) {deathTimer -= (Time.deltaTime/2);}
 		if (LifePoints > 100) {LifePoints = 100;}
@@ -63,6 +66,36 @@ public class Player : MonoBehaviour {
 		
 		healthSlider.value = LifePoints;
 	}
+=======
+        CheckInput();
+        CheckLimbs();
+    }
+
+    void CheckLimbs()
+    {
+        mimicLevel = 0;
+
+        if(UpperLeft.inPosition == true)
+        {
+            mimicLevel++;
+        }
+
+        if (UpperRight.inPosition == true)
+        {
+            mimicLevel++;
+        }
+
+        if (LowerLeft.inPosition == true)
+        {
+            mimicLevel++;
+        }
+
+        if (LowerRight.inPosition == true)
+        {
+            mimicLevel++;
+        }
+    }
+>>>>>>> 06f110ac96415488911e063be2012452bf74c3bd
 
     void CheckInput()
     {

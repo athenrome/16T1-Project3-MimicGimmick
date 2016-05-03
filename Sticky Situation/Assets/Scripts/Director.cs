@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Director : MonoBehaviour {
 
-    public float gameTime;
-    float currGameTime;
-
     public Player player;
 
 
@@ -17,11 +14,20 @@ public class Director : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	
 	}
 
+    void CheckGame()
+    {
+        if(player.LifePoints <= 0)
+        {
+            EndGame();
+        }
+    }
+
     public void EndGame()
     {
-
+        Debug.Log("End Game");
     }
 }
