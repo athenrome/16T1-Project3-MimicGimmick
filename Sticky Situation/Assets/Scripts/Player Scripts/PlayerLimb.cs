@@ -5,8 +5,8 @@ public class PlayerLimb : MonoBehaviour {
 
     public LimbPosition bodyPos;
 
-    public float limbMoveSpeed = 4;
-    public float passiveDropSpeed;
+    public float limbMoveSpeed = 5;
+    public float passiveDropSpeed = 3;
 
     public float timeTilLock;
     float currLockTime;
@@ -16,6 +16,7 @@ public class PlayerLimb : MonoBehaviour {
 
     Quaternion currLimbQuaternion;
     float currLimbRotation;
+
     public float minRotation;
     public float maxRotation;
 
@@ -33,6 +34,12 @@ public class PlayerLimb : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        currDropTime -= Time.deltaTime;
+        if(currDropTime <= 0)
+        {
+            UpdateLimb(LimbAction.PassiveDrop,targetPos);
+        }
 	
 	}
 
