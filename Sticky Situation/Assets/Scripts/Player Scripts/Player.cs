@@ -18,10 +18,10 @@ public class Player : MonoBehaviour {
 	public bool MimicMode;
 
 
-	public float HiddenLevel;
-	public bool PlayerSpotted;
+	public float mimicLevel;
+	bool PlayerSpotted;
 
-	public float LimbMoveSpeed;
+	
 
     public GameObject MoveModel;
     public GameObject MimicModel;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
     public PlayerLimb LowerRight;
 
     public MimicObject currMimic;
-	public Rigidbody rb;
+	Rigidbody rb;
 
     // Use this for initialization
     void Start () {
@@ -205,22 +205,25 @@ public class Player : MonoBehaviour {
 
     public void UpdateTargetLimb(LimbPosition targetLimb, LimbAction action)
     {
+
+        print(currMimic.UpperLeft.transform.rotation.eulerAngles.z);
+
         switch(targetLimb)
         {
             case LimbPosition.LowerLeft:
-                LowerLeft.UpdateLimb(action, currMimic.LowerLeftPosition);
+                LowerLeft.UpdateLimb(action, currMimic.LowerLeft.transform.rotation.eulerAngles.z);
                 break;
 
             case LimbPosition.LowerRight:
-                LowerRight.UpdateLimb(action, currMimic.LowerRightPosition);
+                LowerRight.UpdateLimb(action, currMimic.LowerRight.transform.rotation.eulerAngles.z);
                 break;
 
             case LimbPosition.UpperLeft:
-                UpperLeft.UpdateLimb(action, currMimic.UpperLeftPosition);
+                UpperLeft.UpdateLimb(action, currMimic.UpperLeft.transform.rotation.eulerAngles.z);
                 break;
 
             case LimbPosition.UpperRight:
-                UpperRight.UpdateLimb(action, currMimic.UpperRightPosition);
+                UpperRight.UpdateLimb(action, currMimic.UpperRight.transform.rotation.eulerAngles.z);
                 break;
         }
     }
