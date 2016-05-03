@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
 
 public class Player : MonoBehaviour {
 
@@ -21,12 +23,13 @@ public class Player : MonoBehaviour {
 	public float mimicLevel;
 	bool PlayerSpotted;
 
-	
+	[Tooltip("Currently uses application.LoadLevel to load the end scene")]
+	public float deathTimer = 5;
 
     public GameObject MoveModel;
     public GameObject MimicModel;
 
-
+	public Slider healthSlider;
 
 	//A list of all the limbs:
     public PlayerLimb UpperLeft;
@@ -50,9 +53,15 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        CheckInput();
+		if (LifePoints > 0) {CheckInput ();}
+		if (LifePoints < 0) {deathTimer -= (Time.deltaTime/2);}
+		if (LifePoints > 100) {LifePoints = 100;}
+		if (deathTimer < 0) {Application.LoadLevel("EndScene");
+			}
 
-
+		LifePoints -= Time.deltaTime;
+		
+		healthSlider.value = LifePoints;
 	}
 
     void CheckInput()
