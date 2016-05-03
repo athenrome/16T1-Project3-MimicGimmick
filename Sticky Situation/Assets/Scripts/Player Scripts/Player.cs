@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 	public bool MimicMode;
 
 
-	public float mimicLevel;
+	int mimicLevel;
 	bool PlayerSpotted;
 
 	
@@ -51,9 +51,33 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         CheckInput();
+        CheckLimbs();
+    }
 
+    void CheckLimbs()
+    {
+        mimicLevel = 0;
 
-	}
+        if(UpperLeft.inPosition == true)
+        {
+            mimicLevel++;
+        }
+
+        if (UpperRight.inPosition == true)
+        {
+            mimicLevel++;
+        }
+
+        if (LowerLeft.inPosition == true)
+        {
+            mimicLevel++;
+        }
+
+        if (LowerRight.inPosition == true)
+        {
+            mimicLevel++;
+        }
+    }
 
     void CheckInput()
     {
