@@ -43,6 +43,8 @@ public class Player : MonoBehaviour {
         ModeSwitch(false);
 
 		rb = GetComponent<Rigidbody> ();
+
+        LifePoints = 100;
        
 	
 	}
