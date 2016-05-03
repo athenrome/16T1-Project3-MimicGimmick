@@ -206,7 +206,7 @@ public class Player : MonoBehaviour {
     public void UpdateTargetLimb(LimbPosition targetLimb, LimbAction action)
     {
 
-        print(currMimic.UpperLeft.transform.rotation.eulerAngles.z);
+        //print(currMimic.UpperLeft.transform.rotation.eulerAngles.z);
 
         switch(targetLimb)
         {

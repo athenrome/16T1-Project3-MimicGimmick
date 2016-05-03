@@ -5,13 +5,13 @@ public class PlayerLimb : MonoBehaviour {
 
     public LimbPosition bodyPos;
 
-    public float limbMoveSpeed = 10;
-    public float passiveDropSpeed = 0.3f;
+    float limbMoveSpeed = 15;
+    float passiveDropSpeed = 5.5f;
 
     float timeTilLock;
     float currLockTime;
 
-    float timeTilDrop = 2;
+    float timeTilDrop = 0;
     float currDropTime;
 
     //Quaternion currLimbQuaternion;
@@ -81,17 +81,21 @@ public class PlayerLimb : MonoBehaviour {
 
         if (currLimbRotation >= minRange && currLimbRotation <= maxRange)
         {
+            inPosition = true;
             //Debug.Log("In position");
         }
         else
         {
+            inPosition = false;
             //Debug.Log("Out of Position");
         }
     }
 
     void MoveLimbUp()
     {
+        print(limbMoveSpeed);
         transform.Rotate(Vector3.forward * (limbMoveSpeed * Time.deltaTime));
+        currDropTime += timeTilDrop;
     }
 
     void PassiveDrop()
