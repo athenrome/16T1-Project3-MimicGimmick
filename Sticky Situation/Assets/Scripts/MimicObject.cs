@@ -41,7 +41,7 @@ public class MimicObject : MonoBehaviour {
         UpperRightPosition = Random.Range(minPos, maxPos);
         LowerLeftPosition = Random.Range(-minPos, -maxPos);
         LowerRightPosition = Random.Range(minPos, maxPos);
-        Debug.Log(UpperLeftPosition);
+        
     }
 
     void SetLimbPositions()
@@ -50,7 +50,7 @@ public class MimicObject : MonoBehaviour {
         UpperRight.transform.Rotate(0, 0, UpperRightPosition);
         LowerLeft.transform.Rotate(0, 0, LowerLeftPosition);
         LowerRight.transform.Rotate(0, 0, LowerRightPosition);
-
+        
         Debug.Log("Set Mimic limb positions");
     }
 }

@@ -5,7 +5,7 @@ public class PlayerLimb : MonoBehaviour {
 
     public LimbPosition bodyPos;
 
-    public float limbMoveSpeed = 5;
+    public float limbMoveSpeed = 10;
     public float passiveDropSpeed = 0.3f;
 
     float timeTilLock;
@@ -48,13 +48,14 @@ public class PlayerLimb : MonoBehaviour {
         }
 
         currLimbRotation = this.transform.rotation.eulerAngles.z;
-        //CheckLimbPosition();
+        CheckLimbPosition();
 	
 	}
 
     public void UpdateLimb(LimbAction _action, float _targetPos)
     {
         targetPos = _targetPos;
+        print(targetPos);
 
         switch(_action)
         {
@@ -74,47 +75,28 @@ public class PlayerLimb : MonoBehaviour {
 
     void CheckLimbPosition()
     {
-        if(currLimbRotation <= (currLimbRotation += errorAllownance))
-        {
-            if (currLimbRotation >= (targetPos -= errorAllownance));
-            {
-                Debug.Log("In position");
-                currLockTime -= Time.deltaTime;
-            }
-        }
 
-        if(currLockTime <= 0)
+        float minRange = targetPos -= errorAllownance;
+        float maxRange = targetPos += errorAllownance;
+
+        if (currLimbRotation >= minRange && currLimbRotation <= maxRange)
         {
-            limbLocked = true;
+            //Debug.Log("In position");
+        }
+        else
+        {
+            //Debug.Log("Out of Position");
         }
     }
 
     void MoveLimbUp()
     {
-
-            //float oldZ = transform.rotation.z;
-            //float newZ = oldZ += passiveDropSpeed * Time.deltaTime;
-
-            //transform.Rotate(transform.rotation.x, transform.rotation.y, newZ);
-
-            //Debug.Log("Moving Leg " + currLimbRotation);
-            //currDropTime = timeTilDrop;
-
         transform.Rotate(Vector3.forward * (limbMoveSpeed * Time.deltaTime));
-
     }
 
     void PassiveDrop()
     {
-
-            //float oldZ = transform.rotation.z;
-            //float newZ = oldZ -= passiveDropSpeed * Time.deltaTime;
-
-            //transform.Rotate(transform.rotation.x, transform.rotation.y, newZ);
-            //Debug.Log("Dropping Leg");
-
         transform.Rotate(Vector3.back * (passiveDropSpeed * Time.deltaTime));
-
     }
 }
 
