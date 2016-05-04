@@ -23,7 +23,7 @@ public class MenuController : MonoBehaviour {
 
 	public void OnClick_Restart()
 	{
-		SceneManager.LoadScene (Scenes.TestScene);//Test Scene only for internal playtest
+		SceneManager.LoadScene (Scenes.Menu);//Test Scene only for internal playtest
 		Cursor.visible = false;
 	}
 

@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
 	public int mimicLevel;
 	bool PlayerSpotted;
 
+    public bool playerDead;
     
 
     public GameObject MoveModel;
@@ -56,6 +57,16 @@ public class Player : MonoBehaviour {
 
         CheckInput();
         CheckLimbs();
+
+        if(LifePoints <= 0)
+        {
+            playerDead = true;
+        }
+
+        if(playerDead == true)
+        {
+            Application.LoadLevel("EndScene");
+        }
     }
 
     void CheckLimbs()
