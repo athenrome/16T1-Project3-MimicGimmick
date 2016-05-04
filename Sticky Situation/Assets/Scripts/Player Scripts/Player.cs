@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
             }
             else
             {
-                Debug.Log("Not avalable in current mode");
+                UpdateTargetLimb(LimbPosition.UpperRight, LimbAction.MovingUp);
             }
         }
             
@@ -147,14 +147,6 @@ public class Player : MonoBehaviour {
             if (MimicMode == true)
             {
                 UpdateTargetLimb(LimbPosition.UpperLeft, LimbAction.MovingUp);
-            }
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            if (MimicMode == true)
-            {
-                UpdateTargetLimb(LimbPosition.UpperRight, LimbAction.MovingUp);
             }
         }
 
