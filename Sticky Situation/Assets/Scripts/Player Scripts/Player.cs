@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
-
 
 public class Player : MonoBehaviour {
 
@@ -23,13 +21,12 @@ public class Player : MonoBehaviour {
 	int mimicLevel;
 	bool PlayerSpotted;
 
-	[Tooltip("Currently uses application.LoadLevel to load the end scene")]
-	public float deathTimer = 5;
+	
 
     public GameObject MoveModel;
     public GameObject MimicModel;
 
-	public Slider healthSlider;
+
 
 	//A list of all the limbs:
     public PlayerLimb UpperLeft;
@@ -55,19 +52,8 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-<<<<<<< HEAD
-		if (LifePoints > 0) {CheckInput ();}
-		if (LifePoints < 0) {deathTimer -= (Time.deltaTime/2);}
-		if (LifePoints > 100) {LifePoints = 100;}
-		if (deathTimer < 0) {Application.LoadLevel("EndScene");
-			}
-
-		LifePoints -= Time.deltaTime;
-		
-		healthSlider.value = LifePoints;
-	}
-=======
         CheckInput();
+<<<<<<< HEAD
         CheckLimbs();
     }
 
@@ -95,7 +81,11 @@ public class Player : MonoBehaviour {
             mimicLevel++;
         }
     }
->>>>>>> 06f110ac96415488911e063be2012452bf74c3bd
+=======
+
+
+	}
+>>>>>>> parent of 30752cb... all of my changes, made to the bird, sapling, player, UI, and scenes. I think we might have something.
 
     void CheckInput()
     {

@@ -5,8 +5,8 @@ public class BirdShadowController : MonoBehaviour {
 	public GameObject BirdParent;
 	public Transform theBird;
 	public Transform myPos; 
+	public AudioClip eatingSound;
 
-	public AudioClip birdScreech;
 	// Use this for initialization
 	void Start () {
 		myPos = this.transform;
@@ -14,7 +14,7 @@ public class BirdShadowController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.position = new Vector3 (theBird.position.x, 4f, theBird.position.z);
+		this.transform.position = new Vector3 (theBird.position.x, myPos.position.y, theBird.position.z);
 //		this.transform.rotation = Quaternion.Euler (theBird.rotation.x*90, theBird.rotation.y*90, theBird.rotation.z*90);
 		this.transform.rotation = theBird.transform.rotation;
 }
@@ -23,17 +23,14 @@ public class BirdShadowController : MonoBehaviour {
 	{
 		
 		if (other.gameObject.name == "Player") {
-//			Debug.Log ("I found an " + other.gameObject.name);
-
-			BirdParent.GetComponent<BirdController> ().foundStanley = true;
-			AudioSource.PlayClipAtPoint (birdScreech, theBird.position);
+			Debug.Log ("I found an " + other.gameObject.name);
+			AudioSource.PlayClipAtPoint (eatingSound, this.transform.position);
 		}
 	}
 	void OnTriggerExit (Collider other)
 	{
 		if (other.gameObject.name == "Player") {
-//			Debug.Log ("I lost an " + other.gameObject.name);
-			BirdParent.GetComponent<BirdController> ().foundStanley = false;
+			Debug.Log ("I lost an " + other.gameObject.name);
 		}
 	}
 }

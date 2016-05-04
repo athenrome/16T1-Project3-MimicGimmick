@@ -4,16 +4,15 @@ using System.Collections;
 public class PickupScript : MonoBehaviour {
 
 <<<<<<< HEAD
-	private float lifePointsValue = 15; 
-	private bool leafEaten = false;
-=======
     float lifePointsValue = 15; 
+=======
+    public float lifePointsValue = 15; 
+>>>>>>> parent of 30752cb... all of my changes, made to the bird, sapling, player, UI, and scenes. I think we might have something.
 	public bool leafEaten;
->>>>>>> 06f110ac96415488911e063be2012452bf74c3bd
 	public GameObject leaf;
 	public AudioClip eatingSound;
 
-	private float leafRespawnDuration = 25;
+    public float leafRespawnDuration = 10;
     float timeTilRespawn;
 
 	// Use this for initialization
@@ -44,7 +43,7 @@ public class PickupScript : MonoBehaviour {
 		if (other.gameObject.name == "Player" && leafEaten == false)
         {
             Player player = other.gameObject.GetComponent<Player>();
-			Debug.Log (lifePointsValue);
+
             player.LifePoints += lifePointsValue;
             if(player.LifePoints > 100)
             {
@@ -56,7 +55,7 @@ public class PickupScript : MonoBehaviour {
             timeTilRespawn = leafRespawnDuration;
 
 
-
+			Debug.Log ("we ate a leaf");
 			AudioSource.PlayClipAtPoint (eatingSound, this.transform.position);
 
         }
