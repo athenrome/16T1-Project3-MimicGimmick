@@ -3,12 +3,12 @@ using System.Collections;
 
 public class PickupScript : MonoBehaviour {
 
-    float lifePointsValue = 15; 
-	public bool leafEaten;
+	private float lifePointsValue = 15; 
+	private bool leafEaten = false;
 	public GameObject leaf;
 	public AudioClip eatingSound;
 
-    public float leafRespawnDuration = 10;
+	private float leafRespawnDuration = 25;
     float timeTilRespawn;
 
 	// Use this for initialization
@@ -39,19 +39,15 @@ public class PickupScript : MonoBehaviour {
 		if (other.gameObject.name == "Player" && leafEaten == false)
         {
             Player player = other.gameObject.GetComponent<Player>();
-
+			Debug.Log (lifePointsValue);
             player.LifePoints += lifePointsValue;
-            if(player.LifePoints > 100)
-            {
-                player.LifePoints = 100;
-            }
 
             leaf.SetActive(false);
 			leafEaten = true;
             timeTilRespawn = leafRespawnDuration;
 
 
-			Debug.Log ("we ate a leaf");
+
 			AudioSource.PlayClipAtPoint (eatingSound, this.transform.position);
 
         }
