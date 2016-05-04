@@ -90,7 +90,6 @@ public class PlayerLimb : MonoBehaviour {
 
     void MoveLimbUp()
     {
-        print(limbMoveSpeed);
         transform.Rotate(Vector3.forward * (limbMoveSpeed * Time.deltaTime));
         currDropTime += timeTilDrop;
     }
