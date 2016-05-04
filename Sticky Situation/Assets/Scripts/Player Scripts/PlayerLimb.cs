@@ -8,6 +8,8 @@ public class PlayerLimb : MonoBehaviour {
     float limbMoveSpeed = 15;
     float passiveDropSpeed = 5.5f;
 
+    float timeTilLock;
+    float currLockTime;
 
     float timeTilDrop = 0;
     float currDropTime;
@@ -18,6 +20,7 @@ public class PlayerLimb : MonoBehaviour {
     public float minRotation;
     public float maxRotation;
 
+    public bool limbLocked;
     public bool inPosition;
 
     float errorAllownance = 2;
@@ -57,7 +60,7 @@ public class PlayerLimb : MonoBehaviour {
         switch(_action)
         {
             case LimbAction.Lock:
-                //limbLocked = true;
+                limbLocked = true;
                 break;
 
             case LimbAction.MovingUp:
@@ -90,6 +93,7 @@ public class PlayerLimb : MonoBehaviour {
 
     void MoveLimbUp()
     {
+        print(limbMoveSpeed);
         transform.Rotate(Vector3.forward * (limbMoveSpeed * Time.deltaTime));
         currDropTime += timeTilDrop;
     }

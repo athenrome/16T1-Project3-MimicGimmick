@@ -35,17 +35,6 @@ public class SpiderController : MonoBehaviour
         if (agent.remainingDistance < 0.5f)
             GotoNextPoint();
     }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.name == "Player")
-        {
-            Player player = other.gameObject.GetComponent<Player>();
-
-            player.LifePoints = 0;
-
-        }
-    }
 }
 
     
