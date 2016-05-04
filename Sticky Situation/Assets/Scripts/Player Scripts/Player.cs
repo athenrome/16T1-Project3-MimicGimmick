@@ -53,7 +53,6 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         CheckInput();
-<<<<<<< HEAD
         CheckLimbs();
     }
 
@@ -81,11 +80,6 @@ public class Player : MonoBehaviour {
             mimicLevel++;
         }
     }
-=======
-
-
-	}
->>>>>>> parent of 30752cb... all of my changes, made to the bird, sapling, player, UI, and scenes. I think we might have something.
 
     void CheckInput()
     {

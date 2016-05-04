@@ -3,11 +3,7 @@ using System.Collections;
 
 public class PickupScript : MonoBehaviour {
 
-<<<<<<< HEAD
     float lifePointsValue = 15; 
-=======
-    public float lifePointsValue = 15; 
->>>>>>> parent of 30752cb... all of my changes, made to the bird, sapling, player, UI, and scenes. I think we might have something.
 	public bool leafEaten;
 	public GameObject leaf;
 	public AudioClip eatingSound;
