@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Player : MonoBehaviour {
 
     public GameObject cameraObj;
@@ -18,10 +19,10 @@ public class Player : MonoBehaviour {
 	public bool MimicMode;
 
 
-	int mimicLevel;
+	public int mimicLevel;
 	bool PlayerSpotted;
 
-	
+    
 
     public GameObject MoveModel;
     public GameObject MimicModel;
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //MimicMode = false;
         inMimicZone = false;
         ModeSwitch(false);
 

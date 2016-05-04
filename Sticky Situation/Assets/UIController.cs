@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
+    public Text UIMimicLevel;
+    public GameObject mimicUI;
+
     public Slider lifebar;
     float lifeLostPerSec = 3;
 
@@ -19,6 +22,16 @@ public class UIController : MonoBehaviour {
 	void Update () {
         UpdateLifeSlider();
 
+
+        if(player.MimicMode == true)
+        {
+            mimicUI.SetActive(true);
+            UIMimicLevel.text = "Current Mimic Level: " + player.mimicLevel;
+        }
+        else
+        {
+            mimicUI.SetActive(false);
+        }
     }
 
     void UpdateLifeSlider()
